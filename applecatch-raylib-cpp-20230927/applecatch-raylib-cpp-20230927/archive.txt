@@ -1,0 +1,11 @@
+#webview
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/webview/webview.h)
+file(DOWNLOAD
+https://raw.githubusercontent.com/webview/webview/master/webview.h
+${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/webview/webview.h)
+endif()
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/webview/webview.cpp)
+file(DOWNLOAD
+https://raw.githubusercontent.com/webview/webview/master/webview.cc
+${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/webview/webview.cpp)
+endif()
