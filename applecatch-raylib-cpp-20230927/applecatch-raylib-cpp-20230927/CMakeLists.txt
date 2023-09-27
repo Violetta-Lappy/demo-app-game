@@ -28,7 +28,9 @@ set(3RDPARTY
 target_include_directories(${PROJECT_NAME} PUBLIC ${INTERNALPARTY} PUBLIC ${3RDPARTY})
 
 set(3RDPARTY_LIB
+# winmm.lib is necessary for raylib, without it unable to compile program
 winmm.lib
+${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/lib/raylib/raylib.lib
 )
 
 target_link_libraries(${PROJECT_NAME} ${3RDPARTY_LIB})
