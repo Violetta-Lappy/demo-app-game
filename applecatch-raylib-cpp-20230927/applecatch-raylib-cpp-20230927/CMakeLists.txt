@@ -18,9 +18,11 @@ ${SOURCEFILE_COMMON}
 add_executable(${PROJECT_NAME} main.cpp ${SOURCEFILE_ALL})
 
 set(INTERNALPARTY
+"${CMAKE_CURRENT_SOURCE_DIR}/internal/" 
 )
 
 set(3RDPARTY 
+"${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/" 
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${INTERNALPARTY} PUBLIC ${3RDPARTY})
