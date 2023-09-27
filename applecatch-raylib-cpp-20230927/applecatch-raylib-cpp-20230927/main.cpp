@@ -10,6 +10,39 @@ R"html(<button id="increment">Tap me</button>
 <button id="compute">Compute</button>
 <div>Result of computation: <span id="compute-result">0</span></div>
 <div>Hello World.</div>
+<p>
+<!-- Three -->
+	<section id="three" class="main style1 special">
+		<div class="container">
+
+			<header class="major">
+				<h2>Collaboration Game Projects</h2>
+			</header>
+			<p>A list of game projects that I team up with others</p>
+
+			<div class="row gtr-150">
+				
+				<div class="col-4 col-12-medium">
+					<span class="image fit"><img src="images/image-game-apexdungeon.png" alt="" /></span>										
+					<h3><a href="https://hoanglongplanner.itch.io/apex-dungeon">Apex Dungeon</a></h3>
+					<p>
+						3D Action Roguelike Procedural Dungeon Game.
+					</p>					
+				</div>				
+
+				<div class="col-4 col-12-medium">
+					<span class="image fit"><img src="images/image-game-thelaststarlord.jpg" alt="" /></span>
+					<h3><a href="https://hoanglongplanner.itch.io/buv-gamejam-may-2022">The Last Star Lord</a></h3>
+					<p>
+						2D Platformer Game made in 48-hours game jam event.
+					</p>					
+				</div>				
+
+			</div>
+
+		</div>
+	</section>
+						
 <script>
   const [incrementElement, countElement, computeElement, computeResultElement] =
     document.querySelectorAll("#increment, #count, #compute, #compute-result");
@@ -61,7 +94,7 @@ int main() {
 
     w.set_html(html);
 
-    w.navigate("https://hoanglongplanner.github.io/");
+    //w.navigate("https://hoanglongplanner.github.io/");
 
     w.run();
 
