@@ -22,7 +22,11 @@ set(INTERNALPARTY
 )
 
 set(3RDPARTY 
-"${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/" 
+"${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include" 
+"${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/fmt" 
+"${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/imgui" 
+"${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/raylib" 
+"${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/include/rlimgui" 
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${INTERNALPARTY} PUBLIC ${3RDPARTY})

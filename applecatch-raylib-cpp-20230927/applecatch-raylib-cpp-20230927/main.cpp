@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <iostream>
 
+#include <raylib/raylib.h>
+
 using namespace std;
 
 int main() {
