@@ -1,4 +1,8 @@
-﻿add_library(glad STATIC
+﻿# Not included the followings because it already has precompiled already
+# GFLW
+# raylib
+
+add_library(glad STATIC
 ${CMAKE_CURRENT_SOURCE_DIR}/include/glad/glad.c
 ${CMAKE_CURRENT_SOURCE_DIR}/include/glad/glad.h
 ${CMAKE_CURRENT_SOURCE_DIR}/include/KHR/khrplatform.h
@@ -42,10 +46,5 @@ set_target_properties(fmt PROPERTIES
   ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/fmt"
 )
 
-add_library(miniaudio INTERFACE
-${CMAKE_CURRENT_SOURCE_DIR}/include/miniaudio/miniaudio.h
-)
-set_target_properties(miniaudio PROPERTIES
-LINKER_LANGUAGE CXX
-ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/miniaudio"
-)
+add_library(miniaudio INTERFACE)
+target_include_directories(miniaudio INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include/miniaudio/miniaudio.h")
