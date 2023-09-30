@@ -11,7 +11,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
 # Add all source files related to the project
 target_sources(${PROJECT_NAME} PUBLIC ${SOURCEFILE_ALL})
 # Add include files
-target_include_directories (applecatch-raylib-cpp-20230929 
+target_include_directories (${PROJECT_NAME} 
 PUBLIC ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/src/
 PUBLIC ${CMAKE_SOURCE_DIR}/3rdparty/include
 )
@@ -25,6 +25,7 @@ ${CMAKE_SOURCE_DIR}/3rdparty/lib/raylib/raylib.lib
 ${CMAKE_SOURCE_DIR}/3rdparty/lib/GLFW/glfw3.lib
 ${CMAKE_SOURCE_DIR}/3rdparty/lib/glad/glad.lib
 ${CMAKE_SOURCE_DIR}/3rdparty/lib/imgui/imgui.lib
+${CMAKE_SOURCE_DIR}/3rdparty/lib/rlImGui/rlImGui.lib
 ${CMAKE_SOURCE_DIR}/3rdparty/lib/fmt/fmt.lib
 )
 

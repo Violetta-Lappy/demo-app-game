@@ -48,3 +48,25 @@ set_target_properties(fmt PROPERTIES
 
 add_library(miniaudio INTERFACE)
 target_include_directories(miniaudio INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include/miniaudio/miniaudio.h")
+
+# rlImGui Download
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/rlImGui/rlImGui.cpp)
+file(DOWNLOAD
+https://raw.githubusercontent.com/raylib-extras/rlImGui/main/rlImGui.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/include/rlImGui/rlImGui.cpp)
+endif()
+
+if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/rlImGui/rlImGui.h)
+file(DOWNLOAD
+https://raw.githubusercontent.com/raylib-extras/rlImGui/main/rlImGui.h
+${CMAKE_CURRENT_SOURCE_DIR}/include/rlImGui/rlImGui.h)
+endif()
+
+add_library(rlImGui STATIC
+${CMAKE_CURRENT_SOURCE_DIR}/include/rlImGui/rlImGui.h
+${CMAKE_CURRENT_SOURCE_DIR}/include/rlImGui/rlImGui.cpp
+)
+set_target_properties(rlImGui PROPERTIES
+  ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/rlImGui"
+)
+target_include_directories(rlImGui PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
