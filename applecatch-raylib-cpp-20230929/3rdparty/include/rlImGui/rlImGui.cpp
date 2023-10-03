@@ -457,7 +457,13 @@ void rlImGuiSetup(bool dark)
         ImGui::StyleColorsLight();
 
     ImGuiIO& io = ImGui::GetIO();
-    io.Fonts->AddFontDefault();
+
+    //--imgui: Load Fonts--
+    //If no fonts are loaded, dear imgui will use the default font. 
+    //You can also load multiple fonts and use ImGui::PushFont()/PopFont() to select them.	    
+    //io.Fonts->AddFontDefault();
+    ImFont* font = io.Fonts->AddFontFromFileTTF("data/font/IBMPlexSans-Regular.ttf", 16.0f, nullptr, io.Fonts->GetGlyphRangesJapanese());
+    IM_ASSERT(font != nullptr);
 
 #ifndef NO_FONT_AWESOME
     static const ImWchar icons_ranges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };

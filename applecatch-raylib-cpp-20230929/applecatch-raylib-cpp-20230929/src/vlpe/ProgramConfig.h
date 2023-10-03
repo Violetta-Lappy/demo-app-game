@@ -6,7 +6,7 @@
 #define VIOLETTALAPPY_RELEASE "D"
 #define VIOLETTALAPPY_YEARMONTH 202309
 #define VIOLETTALAPPY_VERSION "0.0.0"
-#define VIOLETTALAPPY_GRAPHIC "OpenGL 4.6 (GLFW + GLAD), Vulkan, WebGPU"
+#define VIOLETTALAPPY_GRAPHIC "Raylib 4.5.0"
 
 class ProgramConfig {
 private:
@@ -27,6 +27,7 @@ public:
 	void SetProgramName(std::string arg_name) {
 		str_programName = arg_name;
 	}
+
 	//--PROGRAM SYSTEM CONFIG--
 	void SetTargetFps(int arg_value) {
 		i32_targetFps = arg_value;
@@ -34,6 +35,7 @@ public:
 	void SetRefreshRate(int arg_value) {
 		i32_refreshRate = arg_value;
 	}
+
 	//--DISPLAY CONFIG--
 	void SetScreenWidth(int arg_value) {
 		i32_screenWidth = arg_value;
@@ -44,8 +46,8 @@ public:
 	void SetDpi(int arg_value) {
 		i32_dpi = arg_value;
 	}
-	//--GRAPHIC CONFIG--
-	//--OPENGL RENDER CONFIG--
+
+	//--GRAPHIC CONFIG--	
 	//--AUDIO CONFIG--
 public:
 	std::string GetProgramName() {

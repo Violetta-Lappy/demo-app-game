@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright 2023 Violetta & Lappy - hoanglongplanner
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,9 +20,6 @@ ProgramEditor::ProgramEditor() {
 }
 
 ProgramEditor::~ProgramEditor() {
-}
-
-void ProgramEditor::Start() {
 }
 
 void ProgramEditor::Update(float arg_dt, float arg_unscaledDt) {
@@ -112,27 +109,25 @@ void ProgramEditor::Update(float arg_dt, float arg_unscaledDt) {
 			}
 			if (ImGui::MenuItem("Simple Overlay", NULL, h_isShowOverlay)) {
 				h_isShowOverlay = !h_isShowOverlay;
-			}			
-			ImGui::Separator();
-			if (ImGui::MenuItem("Cmd Console", "(` | Ctrl+Shift+J | Ctrl+Shift+K)")) {
+			}						
+			ImGui::EndMenu();
+		}
+		if (ImGui::BeginMenu("Tool")) {
+			if (ImGui::MenuItem("Memory Editor")) {
 			}
-			ImGui::Separator();
-			if (ImGui::MenuItem("Text Editor")) {
+			if (ImGui::MenuItem("Debug Log")) {
 			}
 			ImGui::EndMenu();
 		}
 		if (ImGui::BeginMenu("Option")) {
 			if (ImGui::MenuItem("Program Config")) {
-			}
-			if (ImGui::MenuItem("Window")) {
-			}
-			if (ImGui::MenuItem("Theme Customization")) {
+			}			
+			if (ImGui::MenuItem("Style Editor")) {
 			}
 			ImGui::EndMenu();
 		}
 		if (ImGui::BeginMenu("Help")) {
-			if (ImGui::MenuItem("Manual")) {
-			}
+			//if (ImGui::MenuItem("Manual")) {}
 			if (ImGui::MenuItem("About", NULL, h_isShowAbout)) {
 				h_isShowAbout = !h_isShowAbout;
 			}
@@ -162,27 +157,25 @@ void ProgramEditor::Update(float arg_dt, float arg_unscaledDt) {
 			}
 			if (ImGui::Button("Next")) {
 			}
+			if (ImGui::Button("[&] Program Status")) {
+			}
 			ImGui::EndMenuBar();
 		}
 		ImGui::End();
 	}
 	if (ImGui::BeginViewportSideBar("##MainStatusBar", viewport, ImGuiDir_Down, height, window_flags)) {
 		if (ImGui::BeginMenuBar()) {
-			if (ImGui::Button("Content Drawer")) {				
+			if (ImGui::Button("[--] Content Drawer")) {				
 				h_isShowContentDrawer = !h_isShowContentDrawer;
 			}
-			if (ImGui::Button("Cmd Console")) {
+			if (ImGui::Button("[+-] Cmd Console")) {
 			}
-			if (ImGui::Button("Compile")) {								
+			if (ImGui::Button("[*_] Compile Project")) {								
 			}
 			ImGui::EndMenuBar();
 		}
 		ImGui::End();
 	}	
-}
-
-void ProgramEditor::Terminate() {
-	fmt::println("Violetta Lappy: ProgramEditor - Terminate Success [O]");
 }
 
 void ProgramEditor::ShowWorkspaceScene(bool* arg_status) {

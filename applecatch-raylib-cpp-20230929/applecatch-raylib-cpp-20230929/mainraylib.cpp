@@ -6,6 +6,9 @@
 #include <rlImGui/rlImGui.h>
 #include <imgui/imgui.h>
 
+#include <vlpe/ProgramEditor.h>
+#include <vlpe/ProgramRender.h>
+
 int main(int argc, char* argv[]) {
 	fmt::println("Hello World, Raylib");
 	
@@ -16,30 +19,40 @@ int main(int argc, char* argv[]) {
 
 	// Set our game to run at 60 frames-per-second
 	SetTargetFPS(60);               	
+
+	//Setup Imgui
 	rlImGuiSetup(true);
+	
+	//Setup systems
+	ProgramEditor editor;
+	ProgramRender render;
+	render.Start();
+
+	//--imgui: setup--
+	IMGUI_CHECKVERSION();		
 
 	// Main game loop
 	// Detect window close button or ESC key
 	while (!WindowShouldClose()) {
-		BeginDrawing();
-		ClearBackground(RAYWHITE);
+		//--Raylib Start Render--
+		//--Imgui--
+		BeginDrawing();			
+		rlImGuiBegin();		
 
-		DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+		//--Render: Imgui Editor--
+		editor.Update(0.0f, 0.0f);		
 
-		// start ImGui Conent
-		rlImGuiBegin();
-
-		// show ImGui Content
-		bool open = true;
-		ImGui::ShowDemoWindow(&open);
-
-		// end ImGui Content
+		//--Render: Raylib--
+		render.Update(0.0f, 0.0f);
+	
+		//--Raylib End Render--
 		rlImGuiEnd();
-
 		EndDrawing();
 	}
+
+	//--Shutdown--
+	//Close window and OpenGL context
 	rlImGuiShutdown();
-	// Close window and OpenGL context
 	CloseWindow();
 
 	return 0;
