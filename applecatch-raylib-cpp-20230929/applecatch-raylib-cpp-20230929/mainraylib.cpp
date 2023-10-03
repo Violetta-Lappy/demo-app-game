@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 	//Setup Imgui
 	rlImGuiSetup(true);
 	
-	//Setup systems
+	//Setup my own systems - programengine (pe)
 	ProgramEditor editor;
 	ProgramRender render;
 	render.Start();

@@ -233,7 +233,7 @@ void ProgramEditor::ShowOverlay(bool* arg_status) {
 	// Transparent background
 	ImGui::SetNextWindowBgAlpha(0.35f);
 	if (ImGui::Begin("Example: Simple overlay", arg_status, window_flags)) {
-		ImGui::Text("ViolettaLappyProgramEngine \n" "Release %s - %d - %s\n" "%s", VIOLETTALAPPY_RELEASE, VIOLETTALAPPY_YEARMONTH, VIOLETTALAPPY_VERSION, VIOLETTALAPPY_GRAPHIC);
+		ImGui::Text("ViolettaLappyProgramEngine \n" "Release %s - %d - %s\n" "%s", K_ProgramReleasePrefix, K_ProgramYearMonth, K_ProgramVersion, K_ProgramTech);
 		ImGui::Separator();
 		ImGui::Text("right-click to change position");
 		ImGui::Separator();
@@ -270,7 +270,7 @@ void ProgramEditor::ShowAboutWindow(bool* arg_status) {
 		ImGui::EndPopup();
 	}
 
-	ImGui::Text("ViolettaLappyProgramEngine \n" "Release %s - %d - %s\n" "%s", VIOLETTALAPPY_RELEASE, VIOLETTALAPPY_YEARMONTH, VIOLETTALAPPY_VERSION, VIOLETTALAPPY_GRAPHIC);
+	ImGui::Text("ViolettaLappyProgramEngine \n" "Release %s - %d - %s\n" "%s", K_ProgramReleasePrefix, K_ProgramYearMonth, K_ProgramVersion, K_ProgramTech);
 	ImGui::Text("By Violetta & Lappy - hoanglongplanner");
 	ImGui::Text("ViolettaLappyProgramEngine is licensed under the Apache2 License, see LICENSE for more information.");
 	ImGui::Separator();

@@ -3,10 +3,10 @@
 #include <string>
 #include <fmt/format.h>
 
-#define VIOLETTALAPPY_RELEASE "D"
-#define VIOLETTALAPPY_YEARMONTH 202309
-#define VIOLETTALAPPY_VERSION "0.0.0"
-#define VIOLETTALAPPY_GRAPHIC "Raylib 4.5.0"
+#define K_ProgramReleasePrefix "D"
+#define K_ProgramYearMonth 202309
+#define K_ProgramVersion "0.0.0"
+#define K_ProgramTech "Raylib 4.5.0"
 
 class ProgramConfig {
 private:
