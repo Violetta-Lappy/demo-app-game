@@ -271,7 +271,7 @@ void ProgramEditor::ShowAboutWindow(bool* arg_status) {
 	}
 
 	ImGui::Text("ViolettaLappyProgramEngine \n" "Release %s - %d - %s\n" "%s", K_ProgramReleasePrefix, K_ProgramYearMonth, K_ProgramVersion, K_ProgramTech);
-	ImGui::Text("By Violetta & Lappy - hoanglongplanner");
+	ImGui::Text("By ViolettaLappy - hoanglongplanner");
 	ImGui::Text("ViolettaLappyProgramEngine is licensed under the Apache2 License, see LICENSE for more information.");
 	ImGui::Separator();
 
