@@ -8,20 +8,25 @@
 #define K_ProgramVersion "0.0.0"
 #define K_ProgramTech "Raylib 4.5.0"
 
+#define K_ProgramConfig_Check "Output a lot of string about the config here"
+
 class ProgramConfig {
 private:
-	std::string str_programName = "Violetta Lappy Framework - Program Example - PLEASE CHANGE CONFIG IF SEE THIS";
+	std::string str_programName = "ViolettaLappyProgramEngine - Program Example - PLEASE CHANGE CONFIG IF SEE THIS TITLE";
 	std::string str_programSpec = "Raylib OpenGL Windows x64";
-	int i32_screenWidth = 1280; //def: 800
-	int i32_screenHeight = 720; //def: 600
-	int i32_targetFps = 60; //def: 60
-	int i32_refreshRate = 30; //def: 30
+	//def: 800
+	int i32_screenWidth = 1280; 
+	//def: 600
+	int i32_screenHeight = 720; 
+	//def: 60
+	int i32_targetFps = 60; 
+	//def: 30
+	int i32_refreshRate = 30; 
+	//def: 1
 	int i32_dpi = 1;
 public:
-	ProgramConfig() {
-	}
-	~ProgramConfig() {
-	}
+	ProgramConfig() {}
+	~ProgramConfig() {}
 public:
 	//--GLOBAL CONFIG--
 	void SetProgramName(std::string arg_name) {
