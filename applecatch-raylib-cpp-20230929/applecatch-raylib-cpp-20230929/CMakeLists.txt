@@ -5,8 +5,8 @@ add_executable (${PROJECT_NAME} mainraylib.cpp)
 
 # Get all source file for the project (.cpp & .h)
 file(GLOB_RECURSE SOURCEFILE_ALL CONFIGURE_DEPENDS
-${CMAKE_CURRENT_SOURCE_DIR}/include/*.h
-${CMAKE_CURRENT_SOURCE_DIR}/include/*.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/include/pe/*.h
+${CMAKE_CURRENT_SOURCE_DIR}/include/pe_3rdparty/*.cpp
 )
 # Add all source files related to the project
 target_sources(${PROJECT_NAME} PUBLIC ${SOURCEFILE_ALL})
