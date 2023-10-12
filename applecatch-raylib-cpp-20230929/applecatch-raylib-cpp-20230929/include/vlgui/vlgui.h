@@ -28,89 +28,35 @@ namespace vlgui {
 	public:
 		void SetFont(int arg_fontPath);
 		void PushFont(int arg_fontPath);
-		void PopFont(int arg_fontPath);
+		void PopFont(int arg_fontPath);	
 	public:
-		//--[ Canvas ]--
-
-	public:
-		//--[ Text ]--
-
-
-	};
-
-	//A frame that will use to draw graphics on
-	class Canvas {
-	private:
-	public:		
-		//Immediate Mode
-		Canvas(int arg_nameId){ }
-		//For HTML CSS
-		Canvas(int arg_htmlPath){ }
-	public:
-		float x;
-		float y;
-		float z;
-	public:
-		float ScreenWidth;
-		float ScreenHeight;		
-	public:
-		void Begin();
-		void End();
-	};
-
-	class Text {
-	public:
-		float x;
-		float y;
-		float z;
-	public:
-		int Content;
-	public:
-		void SetPosition(float arg_x, float arg_y, float arg_z);
-		void SetText(float arg_x, float arg_y, float arg_z);
-		void SetTextSize(float arg_size);		
-	};
-
-	class Button {
-	public:
-		Button(int arg_text, int[] arg_flags);
-	public:
-		float x;
-		float y;
-		float z;
-	public:
-		float Width;
-		float Height;
-	};
-
-	// TODO: add SliderInt
-	class SliderFloat {
-	public:
-		float Min;
-		float Max;
-	public:		
-		void SetRange(float arg_min, float arg_max);		
-	};
-
-	class Dropdown {
-	private:
-		int[] sz_str_item;
-	public:		
-		int[] GetItems() {
-			return sz_str_item;
-		}
-	public:
-		//use fmt
-		void AddItem(int arg_text);
-		void RemoveItem(int arg_text);
-		bool HasItem(int arg_text) {
+		//--Text--
+		bool Text(int arg_label) {
 			return false;
 		}
-	};
-
-	class Image{ };
-	class ComboBox{ 
+		//Follow IBM calculation of size
+		void SetTextSize(int value){ }
 	public:
+		//--Button--
+		bool Button(int arg_label) {
+			return false;
+		}
+	public:
+		//--CheckBox--
+		bool CheckBox(int arg_label) {
+			return false;
+		}
+	public:
+		//--Dropdown--
+		bool BeginDropdown() {
+			return false;
+		}
+		void Dropdown();
+		bool EndDropdown() {
+			return false;
+		}
+	public:
+		//--ComboBox--
 		bool BeginComboBox() {
 			return false;
 		}
@@ -118,7 +64,16 @@ namespace vlgui {
 			return false;
 		}
 		void EndComboBox();
-	};
+	public:
+		//--SliderFloat--
+		bool SliderFloat(float arg_min = 0.0f, float arg_max = 0.0f) {
+			return false;
+		}		
+		void SetSliderFloatValueRange();	
+	};		
+	
+	class Image{ };
+	class ComboBox{ };
 	class VerticalLayout{ };
 	class HorizontalLayout{ };
 	class Color4{ };	
