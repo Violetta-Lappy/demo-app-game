@@ -14,8 +14,10 @@ namespace vlgui {
 	/// </summary>
 	class Config {
 	public:
-		void Save();
-		void Load();
+		void SaveXML();
+		void LoadXML();
+		void SaveJSON();
+		void LoadJSON();
 	};
 
 	//Manage how vlgui work
@@ -30,11 +32,14 @@ namespace vlgui {
 		void PushFont(int arg_fontPath);
 		void PopFont(int arg_fontPath);	
 	public:
+		//--MainMenuBar--
+		// TODO: add Upper, Down, Left, Right		
+	public:
 		//--Text--
 		bool Text(int arg_label) {
 			return false;
 		}
-		//Follow IBM calculation of size
+		//Follow IBM Carbon calculation of size
 		void SetTextSize(int value){ }
 	public:
 		//--Button--
@@ -71,6 +76,14 @@ namespace vlgui {
 		}		
 		void SetSliderFloatValueRange();	
 	};		
+
+	class Layout {
+	public:
+		void Vertical();
+		void Horizontal();
+		void Grid();
+		void Circle();
+	};
 	
 	class Image{ };
 	class ComboBox{ };
