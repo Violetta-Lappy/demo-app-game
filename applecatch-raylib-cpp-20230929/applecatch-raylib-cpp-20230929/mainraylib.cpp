@@ -28,6 +28,8 @@ limitations under the License.
 int main(int argc, char* argv[]) {	
 	//Setup your own program engine systems here - programengine (pe)
 	ProgramConfig config;
+	config.SetProgramName("Demo Program");
+
 	ProgramEditor editor;
 	ProgramRender render;
 	render.Start();

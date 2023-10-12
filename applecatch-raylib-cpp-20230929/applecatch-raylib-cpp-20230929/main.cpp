@@ -17,7 +17,7 @@
 
 #include <GLFW/glfw3.h> 
 
-#include <vlpe/ProgramEditor.h>
+#include <pe/ProgramEditor.h>
 
 #ifdef __EMSCRIPTEN__
 #include "../libs/emscripten/emscripten_mainloop_stub.h"
