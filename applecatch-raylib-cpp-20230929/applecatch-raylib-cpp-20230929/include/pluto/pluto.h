@@ -1,6 +1,6 @@
 #pragma once
 
-namespace vlgui {
+namespace pluto {
 	enum KFlag {
 		K_EnableDocking,
 		K_EnableResizable,
@@ -21,7 +21,7 @@ namespace vlgui {
 	};
 
 	//Manage how vlgui work
-	class vlgui {
+	class Canvas {
 	public:
 		//header
 	public:
@@ -75,19 +75,17 @@ namespace vlgui {
 			return false;
 		}		
 		void SetSliderFloatValueRange();	
-	};		
-
-	class Layout {
 	public:
-		void Vertical();
-		void Horizontal();
-		void Grid();
-		void Circle();
-	};
-	
-	class Image{ };
-	class ComboBox{ };
-	class VerticalLayout{ };
-	class HorizontalLayout{ };
-	class Color4{ };	
+		//--Layout--
+		//All layout must comply to IBM Design System
+		//bool VerticalLayout();
+		//bool HorizontalLayout();
+		//bool GridLayout();
+		//bool CircleLayout();
+		//bool CardLayout();
+	public:
+		//bool Image();
+		//bool ComboBox();
+		//bool Color4();
+	};					
 }
